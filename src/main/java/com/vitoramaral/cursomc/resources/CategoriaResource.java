@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vitoramaral.cursomc.domain.Categoria;
 import com.vitoramaral.cursomc.services.CategoriaService;
+import com.vitoramaral.cursomc.services.exceptions.ObjectNotFoundException;
 
 @RestController
 @RequestMapping(value = "/categorias")
@@ -20,8 +21,15 @@ public class CategoriaResource {
 	@GetMapping(value = "/{id}", produces = "application/json")
 	public @ResponseBody Categoria findById(@PathVariable(value = "id") Integer id) {
 		Categoria categoria = new Categoria();
-		categoria = service.findById(id);
-		return categoria;
+	    categoria = service.findById(id);
+		
+	    //delegar o erro
+	    if(categoria == null) {
+			  throw new ObjectNotFoundException
+			  ("Objeto não encontrado " + id + Categoria.class.getName());
+			}
+			
+	    return categoria;
 	}
 	
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.vitoramaral.cursomc.domain.Categoria;
 import com.vitoramaral.cursomc.repositories.CategoriaRepository;
+import com.vitoramaral.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -15,5 +16,6 @@ public class CategoriaService {
 	public Categoria findById(Integer id) {
 		Categoria categoria = categoriaRepository.findByid(id);
 		return categoria;
-	}
+	  }
+	
 }
