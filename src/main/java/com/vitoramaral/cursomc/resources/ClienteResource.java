@@ -8,21 +8,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vitoramaral.cursomc.domain.Categoria;
+import com.vitoramaral.cursomc.domain.Cliente;
 import com.vitoramaral.cursomc.services.CategoriaService;
+import com.vitoramaral.cursomc.services.ClienteService;
 import com.vitoramaral.cursomc.services.exceptions.ObjectNotFoundException;
 
 @RestController
-@RequestMapping(value = "/categorias")
-public class CategoriaResource {
+@RequestMapping(value = "/clientes")
+public class ClienteResource {
 
 	@Autowired
-	private CategoriaService service;
+	private ClienteService service;
 	
 	@GetMapping(value = "/{id}", produces = "application/json")
-	public @ResponseBody Categoria findById(@PathVariable(value = "id") Integer id) {
-		Categoria categoria = new Categoria();
-	    categoria = service.findById(id);
-	    return categoria;
+	public @ResponseBody Cliente findById(@PathVariable(value = "id") Integer id) {
+		Cliente cliente = new Cliente();
+	    cliente = service.findById(id);
+	    return cliente;
 	}
 	
 }
