@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitoramaral.cursomc.domain.Categoria;
+
 import com.vitoramaral.cursomc.domain.Cliente;
-import com.vitoramaral.cursomc.services.CategoriaService;
+
 import com.vitoramaral.cursomc.services.ClienteService;
-import com.vitoramaral.cursomc.services.exceptions.ObjectNotFoundException;
+
 
 @RestController
 @RequestMapping(value = "/clientes")

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vitoramaral.cursomc.domain.Categoria;
 import com.vitoramaral.cursomc.services.CategoriaService;
-import com.vitoramaral.cursomc.services.exceptions.ObjectNotFoundException;
 
 @RestController
 @RequestMapping(value = "/categorias")
